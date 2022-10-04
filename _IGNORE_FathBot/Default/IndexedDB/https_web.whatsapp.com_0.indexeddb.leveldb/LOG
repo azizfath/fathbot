@@ -1,0 +1,26 @@
+2022/10/04-19:10:52.193 17f4 Reusing MANIFEST E:\fathbot\_IGNORE_FathBot\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/04-19:10:52.193 17f4 Recovering log #58
+2022/10/04-19:10:52.264 17f4 Reusing old log E:\fathbot\_IGNORE_FathBot\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000058.log 
+2022/10/04-19:11:46.944 610 Compacting 1@1 + 1@2 files
+2022/10/04-19:11:47.196 610 Generated table #63@1: 24552 keys, 1719103 bytes
+2022/10/04-19:11:47.196 610 Compacted 1@1 + 1@2 files => 1719103 bytes
+2022/10/04-19:11:47.229 610 compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/10/04-19:11:47.230 610 Delete type=2 #8
+2022/10/04-19:11:47.230 610 Delete type=2 #60
+2022/10/04-19:12:21.759 1114 Level-0 table #65: started
+2022/10/04-19:12:21.895 1114 Level-0 table #65: 1415109 bytes OK
+2022/10/04-19:12:21.928 1114 Delete type=0 #58
+2022/10/04-19:12:22.279 1114 Compacting 1@0 + 1@1 files
+2022/10/04-19:12:22.513 1114 Generated table #66@0: 57689 keys, 2262487 bytes
+2022/10/04-19:12:22.613 1114 Generated table #67@0: 5447 keys, 376103 bytes
+2022/10/04-19:12:22.613 1114 Compacted 1@0 + 1@1 files => 2638590 bytes
+2022/10/04-19:12:22.691 1114 compacted to: files[ 0 2 1 0 0 0 0 ]
+2022/10/04-19:12:22.691 1114 Delete type=2 #61
+2022/10/04-19:12:22.691 1114 Delete type=2 #65
+2022/10/04-19:12:27.658 610 Compacting 1@1 + 1@2 files
+2022/10/04-19:12:27.894 610 Generated table #68@1: 29513 keys, 2249095 bytes
+2022/10/04-19:12:28.054 610 Generated table #69@1: 35795 keys, 1400362 bytes
+2022/10/04-19:12:28.054 610 Compacted 1@1 + 1@2 files => 3649457 bytes
+2022/10/04-19:12:28.110 610 compacted to: files[ 0 1 2 0 0 0 0 ]
+2022/10/04-19:12:28.110 610 Delete type=2 #63
+2022/10/04-19:12:28.111 610 Delete type=2 #66
