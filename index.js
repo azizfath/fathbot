@@ -37,7 +37,7 @@ async function start(client) {
         let m = data.split(' ')
         m[0] = m[0].toLowerCase()
 
-        if !(from === workspace_id) {
+        if (from !== workspace_id) {
             var img
             if (isMedia && type === 'image') {
                 try {
