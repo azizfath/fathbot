@@ -17,6 +17,8 @@ const ua = '@m!k0mXv=#neMob!le'
 const JSONdb = require('simple-json-db');
 const db = new JSONdb('./dbFathbot.json');
 
+const workspace_id = '120363043232082192@g.us';
+
 wa.create({
         sessionId: 'FathBot',
         disableSpins: true,
@@ -35,37 +37,38 @@ async function start(client) {
         let m = data.split(' ')
         m[0] = m[0].toLowerCase()
 
-        var img
-        if (isMedia && type === 'image') {
-            try {
-                await db.has(from);
-            } catch (error) {
+        if !(from === workspace_id) {
+            var img
+            if (isMedia && type === 'image') {
+                try {
+                    await db.has(from);
+                } catch (error) {
 
-            }
-            img = await wa.decryptMedia(message)
-            var qr_text, nim = db.get(from);
-            if (img != null) {
-                qr_text = await decode_qr(img)
-                if (qr_text == qr_failed) {
-                    await client.reply(from, qr_failed, id)
+                }
+                img = await wa.decryptMedia(message)
+                var qr_text, nim = db.get(from);
+                if (img != null) {
+                    qr_text = await decode_qr(img)
+                    if (qr_text == qr_failed) {
+                        await client.reply(from, qr_failed, id)
+                        return
+                    }
+                }
+                if (nim == null) {
+                    await client.reply(from, 'Masukan NIM terlebih dahulu', id)
                     return
                 }
-            }
-            if (nim == null) {
-                await client.reply(from, 'Masukan NIM terlebih dahulu', id)
-                return
-            }
-            if (qr_text == null) {
-                await client.reply(from, 'Tidak ada data QR', id)
-                return
-            }
+                if (qr_text == null) {
+                    await client.reply(from, 'Tidak ada data QR', id)
+                    return
+                }
 
-            if (nim != null && qr_text != null && qr_text != qr_failed) {
-                result = await presensi_qr(qr_text, nim)
-                client.reply(from, result, id)
+                if (nim != null && qr_text != null && qr_text != qr_failed) {
+                    result = await presensi_qr(qr_text, nim)
+                    client.reply(from, result, id)
+                }
             }
         }
-
 
         switch (m[0]) {
             case '.setnim':
