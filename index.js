@@ -51,7 +51,7 @@ async function start(client) {
         m[0] = m[0].toLowerCase();
 
         if (from !== workspace_id) {
-            if (caption == "") {
+            //if (caption == "") {
                 var img;
                 if (isMedia && type === "image") {
                     try {
@@ -79,7 +79,7 @@ async function start(client) {
                         client.reply(from, result, id);
                     }
                 }
-            }
+            //}
 
         }
 
