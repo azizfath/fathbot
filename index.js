@@ -51,7 +51,7 @@ async function start(client) {
         m[0] = m[0].toLowerCase();
 
         if (from !== workspace_id) {
-            if (data != "") {
+            if (data === "") {
                 var img;
                 if (isMedia && type === "image") {
                     try {
@@ -75,13 +75,13 @@ async function start(client) {
                         await client.reply(from, "Tidak ada data QR", id);
                         return;
                     }
-
                     if (nim != null && qr_text != null && qr_text != qr_failed) {
                         result = await presensi_qr(qr_text, nim);
                         client.reply(from, result, id);
                     }
                 }
             }
+
         }
 
         switch (m[0]) {
