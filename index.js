@@ -51,15 +51,14 @@ async function start(client) {
         m[0] = m[0].toLowerCase();
 
         if (from !== workspace_id) {
-            if (data === "") {
+            if (caption == "") {
                 var img;
                 if (isMedia && type === "image") {
                     try {
                         await db.has(from);
                     } catch (error) {}
                     img = await wa.decryptMedia(message);
-                    var qr_text,
-                        nim = db.get(from);
+                    var qr_text, nim = db.get(from);
                     if (img != null) {
                         qr_text = await decode_qr(img);
                         if (qr_text == qr_failed) {
@@ -108,11 +107,7 @@ async function start(client) {
                 if (isNim.test(m[1])) nim = m[1];
                 try {
                     await db.set(`${from}`, nim);
-                    client.reply(
-                        from,
-                        `Nim Anda ${nim} telah disimpan untuk nomor Anda`,
-                        id
-                    );
+                    client.reply(from, `Nim Anda ${nim} telah disimpan untuk nomor Anda`,id);
                 } catch (error) {
                     console.log(error);
                 }
